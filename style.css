@@ -1,0 +1,143 @@
+@import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;700&display=swap');
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Vazirmatn', sans-serif;
+  background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+}
+
+.container {
+  text-align: center;
+  color: #fff;
+  z-index: 1;
+}
+
+h1 {
+  font-size: 3em;
+  margin-bottom: 0.5em;
+  text-shadow: 0 0 10px #ff5e78, 0 0 20px #ff5e78;
+  animation: glow 2s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+  0% {
+    text-shadow: 0 0 5px #ff5e78, 0 0 15px #ff5e78;
+  }
+  100% {
+    text-shadow: 0 0 20px #ff5e78, 0 0 30px #ff5e78;
+  }
+}
+
+p {
+  font-size: 1.5em;
+  margin-top: 0;
+}
+
+.btn {
+  margin-top: 20px;
+  padding: 10px 20px;
+  font-size: 1em;
+  border: none;
+  border-radius: 30px;
+  background: #fff;
+  color: #ff4d6d;
+  cursor: pointer;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.4);
+  transition: all 0.3s ease;
+}
+
+.btn:hover {
+  background: #ff4d6d;
+  color: #fff;
+  transform: scale(1.1);
+  box-shadow: 0 0 30px #ff4d6d;
+}
+
+.hearts {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.heart {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background: url('https://i.imgur.com/5cXGg4f.png');
+  background-size: cover;
+  animation-name: float, rotate, scaleUpDown;
+  animation-duration: 5s, 10s, 5s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear, linear, ease-in-out;
+  opacity: 0.8;
+}
+
+/* قلب‌ها حرکت شناور به بالا */
+@keyframes float {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-100vh);
+    opacity: 0;
+  }
+}
+
+/* قلب‌ها چرخش نرم */
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* قلب‌ها تغییر سایز */
+@keyframes scaleUpDown {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.3);
+  }
+}
+
+/* افکت پس‌زمینه متحرک ملایم */
+@keyframes bgGradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+body {
+  background: linear-gradient(-45deg, #ff9a9e, #fad0c4, #ff6a88, #ff99ac);
+  background-size: 400% 400%;
+  animation: bgGradient 15s ease infinite;
+}
+
+.overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+  z-index: 0;
+}
